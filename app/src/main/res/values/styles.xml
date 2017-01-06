@@ -2,4 +2,6 @@
 
     <!-- Base application theme. -->
 
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light"/>
+
 </resources>
