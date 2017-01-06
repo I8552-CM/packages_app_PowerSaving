@@ -6,6 +6,7 @@ import android.os.IBinder;
 import android.util.Log;
 
 import static io.github.powersavere.powersaving.util.PowerUtil.isConnected;
+import static io.github.powersavere.powersaving.util.ShellRuntimeExe.RunCommand;
 
 /**
  * Created by sumit on 6/1/17.
@@ -23,6 +24,10 @@ public class Governor extends Service {
         if(isConnected(this)==true){
             ChargerConnected=true;
             Log.i(Tag,"Charger is connected");
+
+            RunCommand("su","failed to change governor");
+            stopService(new Intent(this, Governor.class));
+
         }
         else {
             ChargerConnected=false;
